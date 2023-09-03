@@ -1,0 +1,18 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "kscan0";
+
+        input-gpios =
+            <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // Use Arduino D1 as a row
+            <&gpio0 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // Use Arduino A1 as a column
+    };
+};

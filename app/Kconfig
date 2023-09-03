@@ -125,6 +125,8 @@ config BT_TINYCRYPT_ECC
     default y if BT_HCI && !BT_CTLR
 
 choice BT_LL_SW_LLCP_IMPL
+    choice
+    prompt "Bluetooth Low-Level Link Layer LLCP Implementation"
     default BT_LL_SW_LLCP_LEGACY
 
 endchoice
@@ -571,4 +573,3 @@ osource "$(ZMK_CONFIG)/boards/shields/*/Kconfig.shield"
 
 
 source "Kconfig.zephyr"
-

@@ -1,0 +1,6 @@
+if SHIELD_BOND
+
+config ZMK_KEYBOARD_NAME
+    default "Bond 1.0.0"
+
+endif
